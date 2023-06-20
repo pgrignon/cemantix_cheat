@@ -1,0 +1,4 @@
+/target
+chromedriver
+__pycache__
+*.bin

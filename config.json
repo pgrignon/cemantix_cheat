@@ -1,0 +1,14 @@
+{
+    "chromedriver_path": "http://localhost:9515",
+    "url": "https://cemantix.certitudes.org/",
+    "welcome_div_id": "dialog-close",
+    "form_div_id": "cemantix-form",
+    "form_input_id": "cemantix-guess",
+    "form_button_id": "cemantix-guess-btn",
+    "form_score_guess_xpath":"//*[@id='cemantix-guessed']/td[3]",
+    "cool_score_xpath":"/html/body/aside/div/div[2]/table/tbody/tr[5]/td[3]",
+    "hot_score_xpath":"/html/body/aside/div/div[2]/table/tbody/tr[4]/td[3]",
+    "words_path": "start_words.txt",
+    "api_similar_endpoint": "http://localhost:8000/similar/",
+    "randomize_starting_list": true
+}
