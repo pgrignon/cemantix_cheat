@@ -1,5 +1,6 @@
 use api::get_similar_words;
 use config::build_config;
+use std::time::Duration;
 use std::{thread, time};
 use thirtyfour::prelude::*;
 
@@ -54,11 +55,19 @@ async fn main() -> WebDriverResult<()> {
         if !h.check_if_word_submitted(&word) {
             // Submit word
             elem_text.send_keys(&word).await?;
-            elem_button.wait_until().enabled().await?;
+            elem_button
+                .wait_until()
+                .wait(Duration::from_millis(2000), Duration::from_millis(50))
+                .enabled()
+                .await?;
             elem_button.click().await?;
 
             // Wait
-            elem_button.wait_until().enabled().await?;
+            elem_button
+                .wait_until()
+                .wait(Duration::from_millis(2000), Duration::from_millis(50))
+                .enabled()
+                .await?;
 
             // Check score
             let elem_score_text = elem_form
